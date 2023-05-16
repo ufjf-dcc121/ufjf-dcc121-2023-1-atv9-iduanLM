@@ -26,26 +26,39 @@
             <input type="number"  name="idade"/>
             <input type="submit"/>
             <input type="reset"/>
-
-        </form>
-        <p>!</p>
+    </form>
+        <p></p>
+        <h2>Visitas passadas: </h2>
+        <ol></ol>
     </main>
 
     <script>
         const form = document.querySelector ("form");
         form.addEventListener("submit", aoEnviar);
-        const pNome =document.querySelector("spam");
+        const pNome =document.querySelector("p");
+        const ol = document.querySelector("ol");
+
 
         function aoEnviar(evento){
             evento.preventDefault();
-            consele.log("Hello, form!");
+            console.log("Enviou");
             const nome = form.nome.value;
             const sobrenome = form.sobrenome.value;
             const idade = form.idade.valueAsNumber;
             const nomeCompleto = `${nome} ${sobrenome} ${idade} anos` ;
             console.log(nomeCompleto);
             pNome.innerHTML = `Olá <spam> ${nomeCompleto}</spam>!`;
-        }
+        
+
+        form.reset();
+        form.nome.focus();
+        
+            const li=document.createElement('li');
+            li.textContent = nomeCompleto;
+            console.log(li);
+            ol.appendChild(li);
+    
+    }
     </script>
 </body>
 
