@@ -52,13 +52,35 @@
 
         form.reset();
         form.nome.focus();
-        
+            adicionaPessoa(nome,sobrenome,idade);
+    }    
+
+         function adicionaPessoa (nome,sobrenome,idade){
             const li=document.createElement('li');
-            li.textContent = nomeCompleto;
-            console.log(li);
+            const divPessoa = document.creatElement (`div`);
+            divPessoa.classlist.add("pessoa");
+            
+            const spanNome = document.creatElement(`div`)
+            spanNome.classlist.add(`nome`);
+            spanNome.textContent = nome;
+            divPessoa.apeenChild(spanNome);
+
+            const spansobrenome = document.creatElement(`div`)
+            spanNome.classlist.add(`sobrenome`);
+            spanNome.textContent = sobrenome;
+            divPessoa.apeenChild(spansobrenome);
+
+
+            const spanIdade = document.creatElement(`div`)
+            spanNome.classlist.add(`idade`);
+            spanNome.textContent = idade;
+            divPessoa.apeenChild(spanIdade);
+
+
+            li.appendChild(divPessoa);
             ol.appendChild(li);
+            }
     
-    }
     </script>
 </body>
 
