@@ -6,9 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        p>spam{color:purple;
         
+        .pessoa > div {
+            display :inline;
         }
+         
+        .nome {color:blueviolet}
+         .sobrenome{color:brown}
+
+
+        .sobrenome::before {
+            content: '  ';
+        }
+
+        .idade::before {
+            content: ',  ';
+        }
+
+
+
     </style>
 </head>
 
@@ -57,24 +73,24 @@
 
          function adicionaPessoa (nome,sobrenome,idade){
             const li=document.createElement('li');
-            const divPessoa = document.creatElement (`div`);
-            divPessoa.classlist.add("pessoa");
+            const divPessoa = document.createElement ('div');
+            divPessoa.classList.add("pessoa");
             
-            const spanNome = document.creatElement(`div`)
-            spanNome.classlist.add(`nome`);
+            const spanNome= document.createElement('div')
+            spanNome.classList.add(`nome`);
             spanNome.textContent = nome;
-            divPessoa.apeenChild(spanNome);
+            divPessoa.appendChild(spanNome);
 
-            const spansobrenome = document.creatElement(`div`)
-            spanNome.classlist.add(`sobrenome`);
-            spanNome.textContent = sobrenome;
-            divPessoa.apeenChild(spansobrenome);
+            const spansobrenome = document.createElement('div')
+            spansobrenome.classList.add(`sobrenome`);
+            spansobrenome.textContent = sobrenome;
+            divPessoa.appendChild(spansobrenome);
 
 
-            const spanIdade = document.creatElement(`div`)
-            spanNome.classlist.add(`idade`);
-            spanNome.textContent = idade;
-            divPessoa.apeenChild(spanIdade);
+            const spanIdade = document.createElement('div')
+            spanIdade.classList.add(`idade`);
+            spanIdade.textContent = idade;
+            divPessoa.appendChild(spanIdade);
 
 
             li.appendChild(divPessoa);
